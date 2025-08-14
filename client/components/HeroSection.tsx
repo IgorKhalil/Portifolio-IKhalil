@@ -1,8 +1,9 @@
 import React from 'react';
+import AboutPhoto from './assets/AboutMePhoto.jpeg'
 
 const HeroSection: React.FC = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center relative pt-20 pb-16">
+    <section id="about" className="min-h-screen flex items-center justify-center relative pt-14 pb-16">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
@@ -10,22 +11,22 @@ const HeroSection: React.FC = () => {
           <div className="flex justify-center">
             <div className="relative mx-auto">
               {/* Main character frame */}
-              <div className="relative w-72 h-80 medieval-box bg-gradient-to-b from-primary/5 to-accent/10 overflow-hidden">
+              <div className="relative w-72 h-96 medieval-box bg-gradient-to-b from-primary/5 to-accent/10 overflow-hidden">
                 {/* Health/Energy bar at top */}
-                <div className="absolute top-4 left-4 right-4 h-3 bg-muted medieval-border rounded">
+                <div className="h-4 absolute top-4 left-4 right-4  bg-muted medieval-border rounded">
                   <div className="h-full bg-gradient-to-r from-primary to-accent" style={{ width: '85%' }}></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-pixel text-xs text-white">DEV LVL 99</span>
+                    <span className="font-pixel text-xs text-white">DEV LVL 22</span>
                   </div>
                 </div>
 
                 {/* Character portrait placeholder */}
-                <div className="absolute top-16 left-8 right-8 bottom-20 bg-gradient-to-b from-accent/20 to-primary/20 medieval-border rounded flex items-center justify-center">
+                <div className="p-3 absolute top-12 left-8 right-8 bottom-20 bg-gradient-to-b from-accent/20 to-primary/20 medieval-border rounded flex items-center justify-center">
                   {/* Placeholder avatar - you can replace this with actual photo */}
-                  <div className="w-24 h-24 bg-primary medieval-border rounded-lg flex items-center justify-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded">
-                      <div className="w-full h-full flex items-center justify-center font-pixel text-xs text-background">
-                        FOTO
+                  <div className="p-2 w-full h-full bg-primary medieval-border rounded-lg flex items-center justify-center">
+                    <div className="px-2 w-48 h-48 bg-gradient-to-br from-accent to-primary rounded">
+                      <div className=" w-full h-full flex items-center justify-center font-pixel text-xs text-background">
+                        <img className="rounded-lg object-contain" src={AboutPhoto} alt="" />
                       </div>
                     </div>
                   </div>
@@ -36,7 +37,7 @@ const HeroSection: React.FC = () => {
                   <div className="grid grid-cols-3 gap-2 text-center">
                     <div className="bg-muted medieval-border rounded p-1">
                       <div className="font-pixel text-xs text-accent">STR</div>
-                      <div className="font-pixel text-xs text-primary">95</div>
+                      <div className="font-pixel text-xs text-primary">70</div>
                     </div>
                     <div className="bg-muted medieval-border rounded p-1">
                       <div className="font-pixel text-xs text-accent">INT</div>
@@ -44,7 +45,7 @@ const HeroSection: React.FC = () => {
                     </div>
                     <div className="bg-muted medieval-border rounded p-1">
                       <div className="font-pixel text-xs text-accent">AGI</div>
-                      <div className="font-pixel text-xs text-primary">88</div>
+                      <div className="font-pixel text-xs text-primary">90</div>
                     </div>
                 </div>
                 </div>
