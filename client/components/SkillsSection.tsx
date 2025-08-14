@@ -262,6 +262,7 @@ const SkillsSection: React.FC = () => {
           {categories.map((category) => (
             <div
               key={category.id}
+              
               className="px-4 py-2 medieval-border font-pixel text-xs cursor-pointer transition-colors duration-200"
               style={{ borderColor: category.color, color: category.color }}
             >

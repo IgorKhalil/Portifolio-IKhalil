@@ -45,7 +45,7 @@ const HomeSection: React.FC = () => {
           
           {/* Main Title */}
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-pixel text-primary medieval-text leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-pixel text-secundary medieval-text leading-tight">
               Olá, eu sou
             </h1>
             

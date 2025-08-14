@@ -166,7 +166,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
                   }}
                   className="flex-1 px-3 py-2 bg-primary border-2 border-gamer-red-900 font-pixel text-xs text-white hover:bg-gamer-red-600 transition-colors"
                 >
-                  DEMO
+                  DEPLOY
                 </button>
               )}
               
