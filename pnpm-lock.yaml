@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@rive-app/react-canvas':
+        specifier: ^4.23.1
+        version: 4.23.1(react@18.3.1)
       dotenv:
         specifier: ^17.2.1
         version: 17.2.1
@@ -1160,6 +1163,14 @@ packages:
   '@remix-run/router@1.23.0':
     resolution: {integrity: sha512-O3rHJzAQKamUz1fvE0Qaw0xSFqsA/yafi2iqeE0pvdFtCO1viYx8QL6f3Ln/aCCTLxs68SLf0KPM9eSeM8yBnA==}
     engines: {node: '>=14.0.0'}
+
+  '@rive-app/canvas@2.31.2':
+    resolution: {integrity: sha512-luOos9IW14vsS0M//rvBjIg9UIjQS3vwGlqzP2ceCvqa7ms70vgtTpa6cSiibWUVVWAJwnmJMI8WZYgoJ6V5ug==}
+
+  '@rive-app/react-canvas@4.23.1':
+    resolution: {integrity: sha512-ApnGXtnUkv3LslO8KloBwDQ9QEzhgjPBx6+jml5Caeeiu3svi5bkgiQaK9oqk8WU548vL+k09yVNIcqUWs1QNA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0
 
   '@rolldown/pluginutils@1.0.0-beta.30':
     resolution: {integrity: sha512-whXaSoNUFiyDAjkUF8OBpOm77Szdbk5lGNqFe6CbVbJFrhCCPinCbRA3NjawwlNHla1No7xvXXh+CpSxnPfUEw==}
@@ -3840,6 +3851,13 @@ snapshots:
       - '@types/react'
 
   '@remix-run/router@1.23.0': {}
+
+  '@rive-app/canvas@2.31.2': {}
+
+  '@rive-app/react-canvas@4.23.1(react@18.3.1)':
+    dependencies:
+      '@rive-app/canvas': 2.31.2
+      react: 18.3.1
 
   '@rolldown/pluginutils@1.0.0-beta.30': {}
 
