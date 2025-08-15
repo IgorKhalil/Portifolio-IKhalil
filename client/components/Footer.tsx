@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './assets/LogoIK.png'
+import InteractiveAvatar from './GrandpaComputer';
 
 interface SocialLink {
   name: string;
@@ -284,7 +285,6 @@ const Footer: React.FC = () => {
         
         {/* Footer Info */}
         <div className="text-center space-y-6">
-          {/* Logo */}
           <div className="flex items-center justify-center space-x-4">
             <div className="w-12 h-12 bg-primary pixel-border flex items-center justify-center">
               <div className="w-8 h-8 bg-secundary pixel-border animate-breathe">
@@ -294,6 +294,9 @@ const Footer: React.FC = () => {
             <span className="font-pixel text-xl text-primary medieval-text">
               DEV.IKHALIL
             </span>
+            <div className='flex items-start'>
+            <InteractiveAvatar/>
+            </div>
           </div>
           
           {/* Copyright */}

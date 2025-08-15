@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Skill {
   name: string;
@@ -233,12 +233,18 @@ const SkillsSection: React.FC = () => {
   ];
 
   const categories = [
-    { id: 'programming', name: 'PROGRAMAÇÃO', color: '#ffec3c' },
+    { id: 'programming', name: 'PROGRAMAÇÃO', color: '#ff9210' },
     { id: 'gamedev', name: 'GAME DEV', color: '#e12e0f' },
     { id: 'design', name: 'DESIGN', color: '#e95610' },
     { id: 'tools', name: 'FERRAMENTAS', color: '#ffa207' }
   ];
 
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const filteredSkills = selectedCategory
+    ? skills.filter(skill => skill.category === selectedCategory)
+    : skills; // Se nada estiver selecionado, mostra todas
+    
   return (
     <section id="skills" className="py-20 relative">
       <div className="container mx-auto px-4">
@@ -257,13 +263,25 @@ const SkillsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Filters */}
+         {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div
+            onClick={() => setSelectedCategory(null)}
+            className={`px-4 py-2 medieval-border font-pixel text-xs text-primary cursor-pointer transition-colors duration-200 ${
+              selectedCategory === null ? 'bg-primary/20' : ''
+            }`}
+            
+          >
+            TODAS
+          </div>
+
           {categories.map((category) => (
             <div
               key={category.id}
-              
-              className="px-4 py-2 medieval-border font-pixel text-xs cursor-pointer transition-colors duration-200"
+              onClick={() => setSelectedCategory(category.id)}
+              className={`px-4 py-2 medieval-border font-pixel text-xs cursor-pointer transition-colors duration-200 ${
+                selectedCategory === category.id ? 'bg-primary/20' : ''
+              }`}
               style={{ borderColor: category.color, color: category.color }}
             >
               <span>{category.name}</span>
@@ -273,7 +291,7 @@ const SkillsSection: React.FC = () => {
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
+          {filteredSkills.map((skill, index) => (
             <div
               key={skill.name}
               className="animate-fade-in"
