@@ -6,7 +6,7 @@ interface Skill {
   icon: string;
   color: string;
   description: string;
-  category: 'programming' | 'gamedev' | 'design' | 'tools';
+  category: 'liderança e gestao' | 'comunicação e colaboração' | 'produtividade e resiliência';
 }
 
 const SkillIcon: React.FC<{ icon: string; color: string; name: string }> = ({ icon, color, name }) => {
@@ -28,7 +28,7 @@ const SkillIcon: React.FC<{ icon: string; color: string; name: string }> = ({ ic
             </div>
           </div>
         );
-      case 'gamepad':
+      case 'liderança e gestao':
         return (
           <div className="relative w-full h-full flex items-center justify-center">
             <div className="w-12 h-8 border-2 border-current rounded-none relative">
@@ -41,7 +41,7 @@ const SkillIcon: React.FC<{ icon: string; color: string; name: string }> = ({ ic
             </div>
           </div>
         );
-      case 'design':
+      case 'gestao':
         return (
           <div className="relative w-full h-full flex items-center justify-center">
             <div className="relative w-10 h-10">
@@ -167,76 +167,91 @@ const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
 const SkillsSection: React.FC = () => {
   const skills: Skill[] = [
     {
-      name: 'JAVASCRIPT',
+      name: 'METODOLOGIAS ÁGEIS',
+      level: 100,
+      icon: 'unity',
+      color: '#e12e0f',
+      description: 'Utilizador de metodologias ágeis como SCRUMM',
+      category: 'liderança e gestao'
+    },
+    {
+      name: 'COMUNICAÇÃO EFICAZ',
+      level: 98,
+      icon: 'unity',
+      color: '#ffa207',
+      description: 'Habilidade de explicar ideias complexas de forma clara e concisa, tanto para outros desenvolvedores quanto para pessoas sem conhecimento técnico.',
+      category: 'comunicação e colaboração'
+    },
+    {
+      name: 'RESOLUÇÃO DE PROBLEMAS',
       level: 95,
       icon: 'code',
       color: '#ffec3c',
-      description: 'Linguagem principal para desenvolvimento web e jogos HTML5',
-      category: 'programming'
+      description: ' Capacidade de identificar, analisar e solucionar problemas de forma eficiente e criativa, seja em código ou em situações do dia a dia do projeto.',
+      category: 'produtividade e resiliência'
     },
     {
-      name: 'TYPESCRIPT',
-      level: 90,
-      icon: 'code',
-      color: '#e95610',
-      description: 'Desenvolvimento tipado para projetos complexos e escaláveis',
-      category: 'programming'
-    },
-    {
-      name: 'UNITY',
-      level: 88,
+      name: 'TRABALHO EM EQUIPE',
+      level: 95,
       icon: 'unity',
-      color: '#ffa207',
-      description: 'Engine principal para desenvolvimento de jogos 2D e 3D',
-      category: 'gamedev'
-    },
-    {
-      name: 'UNREAL ENGINE',
-      level: 85,
-      icon: 'gamepad',
       color: '#e12e0f',
-      description: 'Criação de experiências AAA e jogos de alta qualidade',
-      category: 'gamedev'
+      description: 'Habilidade de colaborar com outros membros da equipe, compartilhar conhecimentos, receber feedback e contribuir para um ambiente de trabalho positivo.',
+      category: 'comunicação e colaboração'
     },
     {
-      name: 'REACT',
+      name: 'ADAPTABILIDADE E FLEXIBILIDADE',
       level: 93,
       icon: 'web',
       color: '#ff9210',
-      description: 'Desenvolvimento de interfaces interativas e responsivas',
-      category: 'programming'
+      description: 'Capacidade de se ajustar a novas tecnologias, metodologias e mudanças no projeto, mantendo a produtividade.',
+      category: 'produtividade e resiliência'
     },
     {
-      name: 'GAME DESIGN',
-      level: 87,
-      icon: 'design',
+      name: 'RESILIÊNCIA',
+      level: 90,
+      icon: 'unity',
       color: '#950e05',
-      description: 'Criação de mecânicas, balanceamento e experiência do jogador',
-      category: 'design'
+      description: 'Capacidade de lidar com a pressão, frustrações e falhas, aprendendo com os erros e mantendo a motivação.',
+      category: 'produtividade e resiliência'
     },
     {
-      name: 'BLENDER',
-      level: 80,
-      icon: 'tools',
+      name: 'INTELIGÊNCIA EMOCIONAL',
+      level: 90,
+      icon: 'code',
       color: '#e95610',
-      description: 'Modelagem 3D, animação e criação de assets para jogos',
-      category: 'tools'
+      description: 'Compreender e gerenciar as próprias emoções e as dos outros, especialmente em situações de pressão.',
+      category: 'comunicação e colaboração'
     },
     {
-      name: 'GIT',
+      name: 'ORGANIZAÇÃO',
+      level: 90,
+      icon: 'code',
+      color: '#ffa207',
+      description: 'Gerenciar o tempo, priorizar tarefas e manter o código organizado.',
+      category: 'produtividade e resiliência'
+    },
+    {
+      name: 'GOVERNAÇA',
       level: 90,
       icon: 'tools',
-      color: '#ffa207',
-      description: 'Controle de versão e colaboração em projetos de desenvolvimento',
-      category: 'tools'
+      color: '#e95610',
+      description: 'Mecanismos de liderança, estratégia e controle',
+      category: 'liderança e gestao'
+    },
+    {
+      name: 'PENSAMENTO CRÍTICO',
+      level: 90,
+      icon: 'gestao',
+      color: '#950e05',
+      description: 'A habilidade de avaliar informações, identificar padrões e tomar decisões informadas é crucial para liderar projetos e garantir a qualidade do trabalho.',
+      category: 'liderança e gestao'
     }
   ];
 
   const categories = [
-    { id: 'programming', name: 'PROGRAMAÇÃO', color: '#ff9210' },
-    { id: 'gamedev', name: 'GAME DEV', color: '#e12e0f' },
-    { id: 'design', name: 'DESIGN', color: '#e95610' },
-    { id: 'tools', name: 'FERRAMENTAS', color: '#ffa207' }
+    { id: 'liderança e gestao', name: 'LIDERANÇA E GESTÃO', color: '#ff9210' },
+    { id: 'comunicação e colaboração', name: 'COMUNICAÇÃO E COLABORAÇÃO', color: '#e12e0f' },
+    { id: 'produtividade e resiliência', name: 'PRODUTIVIDADE E RESILIÊNCIA', color: '#e95610' }
   ];
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -253,7 +268,7 @@ const SkillsSection: React.FC = () => {
           <div className="flex items-center justify-center space-x-4 mb-6">
             <div className="w-16 h-4 bg-primary animate-breathe"></div>
             <h2 className="font-pixel text-3xl md:text-4xl text-primary medieval-text">
-              SKILLS
+              HABILIDADES
             </h2>
             <div className="w-16 h-4 bg-primary animate-breathe"></div>
           </div>
@@ -360,6 +375,9 @@ const SkillsSection: React.FC = () => {
             
             <p className="text-foreground/80">
               Integrante do elemenco jovem Tech
+            </p>
+            <p className="text-foreground/60">
+              2025
             </p>
           </div>
           

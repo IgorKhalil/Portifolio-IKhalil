@@ -312,19 +312,19 @@ const TechnologiesSection: React.FC = () => {
         {/* Stats Box */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="pixel-box bg-primary/10 border-4 border-primary p-6 text-center">
-            <div className="font-pixel text-2xl text-gamer-yellow-400 medieval-text mb-2">12+</div>
+            <div className="font-pixel text-2xl text-gamer-yellow-400 medieval-text mb-2">10+</div>
             <div className="font-pixel text-sm text-primary mb-2">TECNOLOGIAS</div>
             <div className="text-xs text-foreground/70">Dominadas e em uso ativo</div>
           </div>
           
           <div className="pixel-box bg-primary/10 border-4 border-primary p-6 text-center">
-            <div className="font-pixel text-2xl text-gamer-yellow-400 medieval-text mb-2">50+</div>
+            <div className="font-pixel text-2xl text-gamer-yellow-400 medieval-text mb-2">10+</div>
             <div className="font-pixel text-sm text-primary mb-2">PROJETOS</div>
-            <div className="text-xs text-foreground/70">Concluídos com essas tech</div>
+            <div className="text-xs text-foreground/70">Concluídos com essas tecnologias</div>
           </div>
           
           <div className="pixel-box bg-primary/10 border-4 border-primary p-6 text-center">
-            <div className="font-pixel text-2xl text-gamer-yellow-400 medieval-text mb-2">5+</div>
+            <div className="font-pixel text-2xl text-gamer-yellow-400 medieval-text mb-2">2+</div>
             <div className="font-pixel text-sm text-primary mb-2">ANOS</div>
             <div className="text-xs text-foreground/70">De experiência profissional</div>
           </div>

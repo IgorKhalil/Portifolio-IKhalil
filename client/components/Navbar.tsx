@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { id: 'home', label: 'HOME', href: '#home' },
     { id: 'about', label: 'SOBRE MIM', href: '#about' },
-    { id: 'skills', label: 'SKILLS', href: '#skills' },
+    { id: 'skills', label: 'HABILIDADES', href: '#skills' },
     { id: 'technologies', label: 'TECNOLOGIAS', href: '#technologies' },
     { id: 'projects', label: 'PROJETOS', href: '#projects' },
     { id: 'contact', label: 'CONTATO', href: '#contact' },
