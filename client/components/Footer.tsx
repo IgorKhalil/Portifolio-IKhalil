@@ -1,129 +1,54 @@
 import React from 'react';
-import logo from './assets/LogoIK.png'
 import InteractiveAvatar from './GrandpaComputer';
+import GithubIcon from './assets/icons8-github.svg';
+import LinkedinIcon from './assets/icons8-linkedin1.svg';
+import EmailIcon from './assets/icons8-gmail.svg';
+
 
 interface SocialLink {
   name: string;
   url: string;
-  icon: string;
+  icon: string; // nome da rede social: 'github', 'linkedin', 'email'
   color: string;
   hoverColor: string;
 }
 
-const RetroIcon: React.FC<{ icon: string; color: string; hoverColor: string; isHovered: boolean }> = ({ 
-  icon, 
-  color, 
-  hoverColor, 
-  isHovered 
+// Map de ícones usando os imports
+const socialLogos: Record<string, string> = {
+  github: GithubIcon,
+  linkedin: LinkedinIcon,
+  email: EmailIcon,
+};
+
+const RetroIcon: React.FC<{ icon: string; color: string; hoverColor: string; isHovered: boolean }> = ({
+  icon,
+  color,
+  hoverColor,
+  isHovered,
 }) => {
   const currentColor = isHovered ? hoverColor : color;
-  
-  const renderIcon = () => {
-    switch (icon) {
-      case 'email':
-        return (
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-10 h-8 border-2 border-current">
-              <div className="w-full h-1 bg-current mt-1"></div>
-              <div className="w-full h-1 bg-current mt-1"></div>
-              <div className="w-6 h-1 bg-current mt-1 mx-auto"></div>
-              {/* Envelope flap */}
-              <div className="absolute top-0 left-0 w-0 h-0" 
-                   style={{
-                     borderLeft: '20px solid transparent',
-                     borderRight: '20px solid transparent',
-                     borderTop: `10px solid ${currentColor}`
-                   }}>
-              </div>
-            </div>
-          </div>
-        );
-      
-      case 'github':
-        return (
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-10 h-10 border-2 border-current rounded-none relative">
-              {/* GitHub cat ears */}
-              <div className="absolute -top-2 left-2 w-2 h-2 bg-current"></div>
-              <div className="absolute -top-2 right-2 w-2 h-2 bg-current"></div>
-              {/* Eyes */}
-              <div className="absolute top-2 left-2 w-1 h-1 bg-current"></div>
-              <div className="absolute top-2 right-2 w-1 h-1 bg-current"></div>
-              {/* Body */}
-              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-3 bg-current"></div>
-              {/* Arms */}
-              <div className="absolute bottom-2 left-1 w-1 h-2 bg-current"></div>
-              <div className="absolute bottom-2 right-1 w-1 h-2 bg-current"></div>
-            </div>
-          </div>
-        );
-      
-      case 'linkedin':
-        return (
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-10 h-10 border-2 border-current rounded-none bg-current/20">
-              {/* LinkedIn logo approximation */}
-              <div className="absolute top-1 left-1 w-2 h-2 bg-current"></div>
-              <div className="absolute top-4 left-1 w-1 h-4 bg-current"></div>
-              <div className="absolute top-4 left-3 w-1 h-4 bg-current"></div>
-              <div className="absolute top-5 left-4 w-3 h-1 bg-current"></div>
-              <div className="absolute top-6 right-1 w-1 h-2 bg-current"></div>
-            </div>
-          </div>
-        );
-      
-      case 'discord':
-        return (
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-10 h-8 bg-current/20 border-2 border-current rounded-none relative">
-              {/* Discord logo approximation */}
-              <div className="absolute top-1 left-2 w-1 h-1 bg-current rounded-full"></div>
-              <div className="absolute top-1 right-2 w-1 h-1 bg-current rounded-full"></div>
-              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-2 bg-current"></div>
-            </div>
-          </div>
-        );
-      
-      case 'twitter':
-        return (
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="relative w-10 h-8">
-              {/* Bird body */}
-              <div className="absolute top-2 left-3 w-4 h-3 bg-current border border-current"></div>
-              {/* Bird head */}
-              <div className="absolute top-1 left-2 w-3 h-2 bg-current"></div>
-              {/* Beak */}
-              <div className="absolute top-1 left-1 w-1 h-1 bg-current"></div>
-              {/* Wing */}
-              <div className="absolute top-3 right-1 w-2 h-2 bg-current"></div>
-              {/* Tail */}
-              <div className="absolute bottom-1 right-0 w-3 h-1 bg-current"></div>
-            </div>
-          </div>
-        );
-      
-      case 'youtube':
-        return (
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-12 h-8 bg-current/20 border-2 border-current relative">
-              {/* Play button */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-0 h-0 border-l-4 border-r-0 border-t-2 border-b-2 border-l-current border-t-transparent border-b-transparent"></div>
-              </div>
-            </div>
-          </div>
-        );
-      
-      default:
-        return (
-          <div className="w-8 h-8 bg-current border-2 border-current"></div>
-        );
-    }
+
+  // Map dos SVGs importados
+  const socialLogos: Record<string, string> = {
+    github: GithubIcon,
+    linkedin: LinkedinIcon,
+    email: EmailIcon,
   };
 
+  const logoSrc = socialLogos[icon];
+
   return (
-    <div style={{ color: currentColor }}>
-      {renderIcon()}
+    <div
+      className="relative w-10 h-10 transition-all duration-300 hover:scale-110 cursor-pointer flex items-center justify-center"
+      style={{ filter: `drop-shadow(0 0 10px ${currentColor})` }}
+    >
+      {logoSrc ? (
+        <img src={logoSrc} alt={icon} className="object-contain w-full h-full" />
+      ) : (
+        <div className="w-full h-full bg-gray-600 border-2 border-gray-800 flex items-center justify-center">
+          <div className="font-pixel text-xs text-white">{icon.slice(0, 2)}</div>
+        </div>
+      )}
     </div>
   );
 };
@@ -181,38 +106,24 @@ const ContactSection: React.FC = () => {
   const socialLinks: SocialLink[] = [
     {
       name: 'EMAIL',
-      url: 'mailto:dev@example.com',
+      url: 'https://mailto:igorfros@gmail.com', // Confirme se este é o email correto
       icon: 'email',
-      color: '#e12e0f',
-      hoverColor: '#ffec3c'
+      color: '#7cbba2',
+      hoverColor: '#E53935'
     },
     {
       name: 'GITHUB',
-      url: 'https://github.com/username',
+      url: 'https://github.com/IgorKhalil',
       icon: 'github',
-      color: '#950e05',
-      hoverColor: '#e12e0f'
+      color: '#7cbba2',
+      hoverColor: '#000000'
     },
     {
       name: 'LINKEDIN',
-      url: 'https://linkedin.com/in/username',
+      url: 'https://linkedin.com/in/igor-khalil',
       icon: 'linkedin',
-      color: '#e95610',
-      hoverColor: '#ffa207'
-    },
-    {
-      name: 'DISCORD',
-      url: 'https://discord.gg/username',
-      icon: 'discord',
-      color: '#ffa207',
-      hoverColor: '#ffec3c'
-    },
-    {
-      name: 'TWITTER',
-      url: 'https://twitter.com/username',
-      icon: 'twitter',
-      color: '#ff9210',
-      hoverColor: '#e95610'
+      color: '#7cbba2',
+      hoverColor: '#0288D1'
     }
   ];
 

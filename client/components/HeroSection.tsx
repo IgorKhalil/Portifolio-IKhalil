@@ -3,8 +3,8 @@ import AboutPhoto from './assets/AboutMePhoto.jpeg'
 
 const HeroSection: React.FC = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center relative pt-14 pb-16">
-      <div className="container mx-auto px-4">
+    <section id="about" className="min-h-screen flex items-center justify-center relative pt-16 pb-16">
+      <div className="container mx-auto px-4 pt-1">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Developer Photo with Game Character Frame */}
@@ -143,7 +143,7 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Status indicators */}
-            <div className="flex items-center space-x-6 pt-4">
+            <div className="flex items-center space-x-6 pt-1">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-500 border border-green-400 animate-pulse"></div>
                 <span className="font-pixel text-xs text-green-500">ONLINE</span>

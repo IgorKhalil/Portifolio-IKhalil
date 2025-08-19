@@ -1,4 +1,15 @@
 import React from 'react';
+import jsLogo from './assets/icons8-javascript.svg';
+import tsLogo from './assets/icons8-typescript.svg';
+import reactLogo from './assets/icons8-react.svg';
+import godotLogo from './assets/icons8-godot.svg';
+import gitLogo from './assets/icons8-git.svg';
+import nodeLogo from './assets/icons8-node-js.svg';
+import pythonLogo from './assets/icons8-python.svg';
+import figmaLogo from './assets/icons8-figma.svg';
+import cLogo from './assets/icons8-c-programming.svg';
+import javaLogo from './assets/icons8-java.svg';
+import tailwind from './assets/icons8-tailwind-css.svg'
 
 interface Technology {
   name: string;
@@ -8,106 +19,39 @@ interface Technology {
   experience: string;
   description: string;
 }
+const logos: Record<string, string> = {
+  javascript: jsLogo,
+  typescript: tsLogo,
+  react: reactLogo,
+  godot: godotLogo,
+  git: gitLogo,
+  node: nodeLogo,
+  python: pythonLogo,
+  figma: figmaLogo,
+  c: cLogo,
+  java: javaLogo,
+  tailwind:tailwind,
+};
 
 const TechLogo: React.FC<{ tech: Technology }> = ({ tech }) => {
-  const renderLogo = () => {
-    switch (tech.logo) {
-      case 'javascript':
-        return (
-          <div className="relative w-full h-full bg-yellow-400 border-2 border-yellow-600 flex items-center justify-center">
-            <div className="font-pixel text-xs text-black">JS</div>
-          </div>
-        );
-      case 'typescript':
-        return (
-          <div className="relative w-full h-full bg-blue-500 border-2 border-blue-700 flex items-center justify-center">
-            <div className="font-pixel text-xs text-white">TS</div>
-          </div>
-        );
-      case 'react':
-        return (
-          <div className="relative w-full h-full bg-cyan-400 border-2 border-cyan-600 flex items-center justify-center">
-            <div className="w-6 h-6 border-2 border-white rounded-full relative">
-              <div className="absolute inset-0 border border-white rounded-full transform rotate-45"></div>
-              <div className="absolute inset-0 border border-white rounded-full transform -rotate-45"></div>
-              <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-            </div>
-          </div>
-        );
-      case 'godot':
-        return (
-          <div className="relative w-full h-full bg-blue-600 border-2 border-blue-800 flex items-center justify-center">
-            <div className="w-4 h-4 bg-white border border-blue-300"></div>
-          </div>
-        );
-      case 'git':
-        return (
-          <div className="relative w-full h-full bg-orange-600 border-2 border-orange-800 flex items-center justify-center">
-            <div className="relative w-6 h-6 flex items-center justify-center">
-              <div className="w-4 h-4 border-2 border-white rounded-none"></div>
-              <div className="absolute top-0 left-1/2 w-1 h-2 bg-white transform -translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-1/2 w-1 h-2 bg-white transform -translate-x-1/2"></div>
-            </div>
-          </div>
-        );
-      case 'node':
-        return (
-          <div className="relative w-full h-full bg-green-600 border-2 border-green-800 flex items-center justify-center">
-            <div className="font-pixel text-xs text-white">NODE</div>
-          </div>
-        );
-      case 'python':
-        return (
-          <div className="relative w-full h-full bg-blue-500 border-2 border-yellow-500 flex items-center justify-center">
-            <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-            <div className="w-3 h-3 bg-blue-300 rounded-full ml-1"></div>
-          </div>
-        );
-      case 'mysql':
-        return (
-          <div className="relative w-full h-full bg-blue-700 border-2 border-orange-500 flex items-center justify-center">
-            <div className="relative w-6 h-4">
-              <div className="w-full h-full bg-orange-400 border border-white"></div>
-              <div className="absolute top-0 left-0 w-2 h-2 bg-blue-600"></div>
-            </div>
-          </div>
-        );
-      case 'mongodb':
-        return (
-          <div className="relative w-full h-full bg-green-700 border-2 border-green-900 flex items-center justify-center">
-            <div className="w-4 h-6 bg-white border border-green-500 rounded-t-lg"></div>
-          </div>
-        );
-      case 'figma':
-        return (
-          <div className="relative w-full h-full bg-purple-500 border-2 border-purple-700 flex items-center justify-center">
-            <div className="relative w-6 h-6">
-              <div className="absolute top-0 left-0 w-3 h-3 bg-red-400 rounded-tl-lg"></div>
-              <div className="absolute top-0 right-0 w-3 h-3 bg-purple-300 rounded-tr-lg"></div>
-              <div className="absolute bottom-0 left-0 w-3 h-3 bg-green-400 rounded-bl-lg"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 bg-blue-400 rounded-br-lg"></div>
-            </div>
-          </div>
-        );
-      default:
-        return (
-          <div className="w-full h-full bg-gray-600 border-2 border-gray-800 flex items-center justify-center">
-            <div className="font-pixel text-xs text-white">{tech.name.slice(0, 2)}</div>
-          </div>
-        );
-    }
-  };
+  const logoSrc = logos[tech.logo];
 
   return (
     <div className="relative group">
       <div 
-        className="w-16 h-16 transition-all duration-300 hover:scale-110 hover:animate-bounce cursor-pointer"
-        style={{ filter: 'drop-shadow(0 0 10px rgba(225, 46, 15, 0.3))' }}
+        className="w-16 h-16 transition-all duration-300 hover:scale-110 hover:animate-bounce cursor-pointer flex items-center justify-center"
+        style={{ filter: 'drop-shadow(0 0 10px #ACD3A8)' }}
       >
-        {renderLogo()}
+        {logoSrc ? (
+          <img src={logoSrc} alt={tech.name} className=" object-contain" />
+        ) : (
+          <div className="w-full h-full bg-gray-600 border-2 border-gray-800 flex items-center justify-center">
+            <div className="font-pixel text-xs text-white">{tech.name.slice(0, 2)}</div>
+          </div>
+        )}
       </div>
-      
-      {/* Hover tooltip */}
+
+      {/* Tooltip */}
       <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
         <div className="pixel-box bg-background border-2 border-primary p-2 min-w-max">
           <div className="font-pixel text-xs text-primary mb-1">{tech.name}</div>
@@ -163,47 +107,71 @@ const TechnologiesSection: React.FC = () => {
       name: 'JAVASCRIPT',
       logo: 'javascript',
       category: 'language',
-      color: '#ffec3c',
-      experience: '5+ ANOS',
-      description: 'Linguagem versátil para web e desenvolvimento de jogos HTML5'
+      color: '#9058ff',
+      experience: '3+ ANOS',
+      description: 'Linguagem versátil para web'
+    },
+    {
+      name: 'JAVA',
+      logo: 'java',
+      category: 'language',
+      color: '#9058ff',
+      experience: '1+ ANOS',
+      description: 'Liguagem usada para desenvolver uma ampla variedade de aplicações'
+    },
+    {
+      name: 'C',
+      logo: 'c',
+      category: 'language',
+      color: '#9058ff',
+      experience: '2+ ANOS',
+      description: 'Usada para desenvolver sistemas operacionais, sistemas embarcados...'
     },
     {
       name: 'TYPESCRIPT',
       logo: 'typescript',
       category: 'language',
-      color: '#e95610',
-      experience: '4+ ANOS',
+      color: '#9058ff',
+      experience: '3+ ANOS',
       description: 'Desenvolvimento tipado para projetos escaláveis e robustos'
     },
     {
       name: 'PYTHON',
       logo: 'python',
       category: 'language',
-      color: '#ffa207',
-      experience: '3+ ANOS',
+      color: '#9058ff',
+      experience: '2+ ANOS',
       description: 'Automação, IA e desenvolvimento de ferramentas para jogos'
     },
     {
       name: 'REACT',
       logo: 'react',
       category: 'framework',
-      color: '#ff9210',
-      experience: '4+ ANOS',
+      color: '#9058ff',
+      experience: '2+ ANOS',
       description: 'Criação de interfaces interativas e aplicações web modernas'
     },
     {
       name: 'NODE.JS',
       logo: 'node',
       category: 'framework',
-      color: '#e12e0f',
-      experience: '4+ ANOS',
-      description: 'Backend APIs e serviços para jogos multiplayer'
+      color: '#9058ff',
+      experience: '2+ ANOS',
+      description: 'Backend APIs e serviços'
+    },
+    {
+      name: 'TAILWIND',
+      logo: 'tailwind',
+      category: 'framework',
+      color: '#9058ff',
+      experience: '2+ ANOS',
+      description: 'Permite criar interfaces de usuário de forma rápida e eficiente através de classes utilitárias'
     },
     {
       name: 'GODOT',
       logo: 'godot',
       category: 'engine',
-      color: '#ffa207',
+      color: '#9058ff',
       experience: '2+ ANOS',
       description: 'Engine open source para jogos indie e experimentais'
     },
@@ -211,14 +179,22 @@ const TechnologiesSection: React.FC = () => {
       name: 'GIT',
       logo: 'git',
       category: 'tool',
-      color: '#e12e0f',
-      experience: '5+ ANOS',
+      color: '#9058ff',
+      experience: '2+ ANOS',
       description: 'Controle de versão essencial para projetos colaborativos'
+    },
+    {
+      name: 'FIGMA',
+      logo: 'figma',
+      category: 'tool',
+      color: '#9058ff',
+      experience: '3+ ANOS',
+      description: 'Usada principalmente para criar interfaces de usuário (UI) e experiências de usuário (UX)'
     }
   ];
 
   const categories = [
-    { id: 'language', name: 'LINGUAGENS', color: '#ffec3c' },
+    { id: 'language', name: 'LINGUAGENS', color: '#ffa207' },
     { id: 'framework', name: 'FRAMEWORKS', color: '#e12e0f' },
     { id: 'engine', name: 'ENGINES', color: '#e95610' },
     { id: 'tool', name: 'FERRAMENTAS', color: '#ffa207' }
