@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import duda from './assets/duda.gif';
+import buscasaude from './assets/buscasaude.gif';
+import pulseminds from './assets/pulseminds.gif';
+import codepage from './assets/codepage.gif';
 
 interface Project {
   id: string;
   title: string;
-  category: 'game' | 'web' | 'mobile' | 'tool';
+  category: 'game' | 'web' | 'pesquisa' | 'tool';
   description: string;
   longDescription: string;
   technologies: string[];
@@ -14,6 +18,12 @@ interface Project {
   status: 'completed' | 'in-progress' | 'prototype';
   year: string;
 }
+const image: Record<string, string> = {
+  Duda: duda,
+  BuscaSaude: buscasaude,
+  PulseMinds: pulseminds,
+  CodePage: codepage
+};
 
 const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -39,21 +49,19 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
 
   return (
     <div 
-      className="group relative h-80 perspective-1000 cursor-pointer"
+      className="group relative h-96 perspective-1000 cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
       style={{ animationDelay: `${index * 150}ms` }}
     >
       <div className={`relative w-full h-full transition-transform duration-700 preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
         
         {/* Front Side */}
-        <div className="absolute inset-0 backface-hidden pixel-box bg-card/50 border-2 border-primary/30 hover:border-primary transition-all duration-300 overflow-hidden">
+        <div className="h-full flex flex-col absolute inset-0 backface-hidden pixel-box bg-card/50 border-2 border-primary/30 hover:border-primary transition-all duration-300 overflow-hidden">
           {/* Project Image */}
-          <div className="relative h-48 bg-gradient-to-br from-primary/20 to-gamer-orange-500/20 border-b-2 border-primary/30 overflow-hidden">
+          <div className="relative h-52 bg-gradient-to-br from-primary/20 to-gamer-orange-500/20 border-b-2 border-primary/30 overflow-hidden ">
             {/* Placeholder for project image */}
             <div className="w-full h-full bg-gradient-to-br from-primary/30 to-gamer-orange-500/30 flex items-center justify-center">
-              <div className="w-24 h-24 border-4 border-primary bg-primary/20 flex items-center justify-center">
-                <div className="font-pixel text-xs text-primary">{project.category.toUpperCase()}</div>
-              </div>
+              <img src={image[project.image]} alt={project.title} className="object-cover" />
             </div>
             
             {/* Category Badge */}
@@ -94,8 +102,8 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
           </div>
           
           {/* Project Info */}
-          <div className="p-4 space-y-3">
-            <h3 className="font-pixel text-sm text-primary medieval-text group-hover:animate-pulse">
+          <div className="h-auto p-4 space-y-3">
+            <h3 className="font-pixel text-xs text-primary medieval-text group-hover:animate-pulse">
               {project.title}
             </h3>
             
@@ -103,16 +111,16 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
               {project.description}
             </p>
             
-            <div className="flex justify-between items-center">
-              <span className="font-pixel text-xs text-gamer-orange-500">{project.year}</span>
-              <div className="flex space-x-1">
-                {project.technologies.slice(0, 3).map((tech, i) => (
-                  <div key={i} className="w-2 h-2 border border-primary" style={{ backgroundColor: getCategoryColor(project.category) }}></div>
-                ))}
-                {project.technologies.length > 3 && (
-                  <div className="font-pixel text-xs text-foreground/50">+{project.technologies.length - 3}</div>
-                )}
-              </div>
+          </div>
+          <div className="flex justify-between items-center p-4 space-y-3">
+            <span className="font-pixel text-xs text-gamer-orange-500">{project.year}</span>
+            <div className="flex space-x-1">
+              {project.technologies.slice(0, 3).map((tech, i) => (
+                <div key={i} className="w-2 h-2 border border-primary" style={{ backgroundColor: getCategoryColor(project.category) }}></div>
+              ))}
+              {project.technologies.length > 3 && (
+                <div className="font-pixel text-xs text-foreground/50">+{project.technologies.length - 3}</div>
+              )}
             </div>
           </div>
           
@@ -144,7 +152,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
             {/* Technologies */}
             <div className="space-y-2">
               <div className="font-pixel text-xs text-gamer-orange-500">TECNOLOGIAS:</div>
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-1 overflow-y-auto max-h-14">
                 {project.technologies.map((tech, i) => (
                   <span 
                     key={i} 
@@ -203,79 +211,82 @@ const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
     {
       id: '1',
-      title: 'PIXEL QUEST RPG',
+      title: 'DUDA EM ALCÂNTARA',
       category: 'game',
-      description: 'RPG retrô com mecânicas modernas, mundo aberto e sistema de crafting avançado.',
-      longDescription: 'Um RPG completo inspirado nos clássicos 8-bit, mas com mecânicas modernas. Inclui sistema de combate por turnos, mundo aberto para explorar, crafting de itens, missões secundárias e história envolvente com múltiplos finais.',
-      technologies: ['Unity', 'C#', 'Photoshop', 'FMOD'],
-      image: '',
-      demoUrl: 'https://example.com/demo',
-      codeUrl: 'https://github.com/user/project',
+      description: 'Jogo educacional para ensinar programação de satélites.',
+      longDescription: 'Um jogo no formato Quiz que ensina programação de satélites, foi desenvolvido para ajudar estudantes da rede de ensino de Alcântara do Maranhão a entender conceitos de programação de forma interativa e divertida.',
+      technologies: ['GODOT', 'GDScript', 'SCRUM', 'FIGMA'],
+      image: 'Duda',
+      demoUrl: null,
+      codeUrl: null,
       featured: true,
       status: 'completed',
       year: '2023'
     },
     {
       id: '2',
-      title: 'NEON RUNNER',
-      category: 'game',
-      description: 'Endless runner cyberpunk com elementos de plataforma e coleta de power-ups.',
-      longDescription: 'Jogo endless runner ambientado em um futuro cyberpunk. O jogador controla um corredor através de uma cidade neon, coletando power-ups, evitando obstáculos e enfrentando chefões. Sistema de upgrades e diferentes ambientes.',
-      technologies: ['Unity', 'C#', 'Shader Graph', 'DOTween'],
-      image: '',
-      demoUrl: 'https://example.com/demo',
-      featured: false,
-      status: 'completed',
-      year: '2023'
-    },
-    {
-      id: '3',
-      title: 'GAME DEV PORTFOLIO',
+      title: 'Dashboard Previsão de Vendas',
       category: 'web',
-      description: 'Website responsivo para showcase de projetos com tema gamer e animações.',
-      longDescription: 'Portfolio interativo criado com React e TypeScript, featuring tema gamer com animações CSS, sistema de filtros para projetos, integração com APIs e design responsivo. Inclui blog para postagens sobre desenvolvimento.',
-      technologies: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
-      image: '',
-      demoUrl: 'https://example.com/demo',
-      codeUrl: 'https://github.com/user/project',
+      description: 'Projeto desenvolvido pelo PulseMinds, vencedor do desafio proposto pela Pulse.',
+      longDescription: 'Solução de Business Intelligence vencedora do desafio proposto pela Pulse em parceria com o Supermercado Mateus. O dashboard interativo transforma dados brutos em insights para a tomada de decisões estratégicas.',
+      technologies: ['React', 'TypeScript', 'Tailwind', 'NodeJS','Vite','MongoDB'],
+      image: 'PulseMinds',
+      demoUrl: 'https://pulseminds.vercel.app',
+      codeUrl: 'https://github.com/eliseu01/dashboard',
       featured: true,
       status: 'completed',
       year: '2024'
     },
     {
+      id: '3',
+      title: 'BUSCA SAÚDE',
+      category: 'tool',
+      description: 'Ferramenta que facilita a busca por unidades de saúde.',
+      longDescription: 'Plataforma para busca de unidades de saúde, prototipada em 48 horas durante o Hackathon Inova Maranhão. A stack com Node.js e React/Vite foi escolhida estrategicamente para garantir a máxima velocidade tanto na construção da API quanto na iteração da interface.',
+      technologies: ['REACT', 'JavaScript', 'MongoDB', 'NodeJS','PostgreSQL','Vite','TailwindCSS'],
+      image: 'BuscaSaude',
+      demoUrl: 'https://buscasaudema.vercel.app',
+      codeUrl: 'https://github.com/Coelho-G-Dev/Desafio-05-Back-End',
+      featured: false,
+      status: 'completed',
+      year: '2023'
+    },
+    {
       id: '4',
-      title: 'RETRO PUZZLE',
-      category: 'mobile',
-      description: 'Jogo de quebra-cabeça para mobile com mais de 100 níveis únicos.',
-      longDescription: 'Aplicativo mobile de quebra-cabeças inspirado nos clássicos arcade. Mais de 100 níveis únicos, sistema de conquistas, leaderboards online e modo competitivo multiplayer. Desenvolvido nativamente para iOS e Android.',
-      technologies: ['Unity', 'C#', 'Firebase', 'AdMob'],
-      image: '',
-      demoUrl: 'https://play.google.com/store',
+      title: 'LandingPage',
+      category: 'web',
+      description: 'Landing Page para o projeto de arquitetura.',
+      longDescription: 'Landing Page para o projeto de arquitetura, desenvolvida com foco em design responsivo e otimização para SEO.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: 'CodePage',
+      demoUrl: 'https://leadingpage-arquitetura.netlify.app',
+      codeUrl: 'https://github.com/IgorKhalil/LeadingPage-Arquitetura',
       featured: false,
       status: 'completed',
       year: '2022'
     },
     {
       id: '5',
-      title: 'LEVEL EDITOR PRO',
-      category: 'tool',
-      description: 'Ferramenta visual para criação de níveis de jogos 2D com sistema de tiles.',
-      longDescription: 'Editor visual completo para criação de níveis 2D. Inclui sistema de tiles drag-and-drop, layers, animações, sistema de física, preview em tempo real e exportação para múltiplos formatos. Interface intuitiva com atalhos customizáveis.',
-      technologies: ['Electron', 'JavaScript', 'Canvas API', 'Node.js'],
-      image: '',
-      codeUrl: 'https://github.com/user/project',
+      title: 'Duke Valley',
+      category: 'game',
+      description: 'Jogo inspirado em Stardew Valley, feito em Python',
+      longDescription: 'Jogo de simulação de fazenda, desenvolvido em Python, através da biblioteca Pygame, trabalho de conclusão de curso de algoritmos.',
+      technologies: ['Pygame', 'Python'],
+      image: 'CodePage',
+      codeUrl: 'https://github.com/IgorKhalil/Duke-Valley',
       featured: true,
       status: 'in-progress',
       year: '2024'
     },
     {
       id: '6',
-      title: 'VR SPACE ADVENTURE',
-      category: 'game',
-      description: 'Experiência VR imersiva de exploração espacial com física realista.',
-      longDescription: 'Jogo VR onde o jogador explora o espaço sideral, visita planetas, coleta recursos e constrói bases espaciais. Física realista, interações naturais em VR e sistema de teleporte otimizado para conforto do usuário.',
-      technologies: ['Unreal Engine', 'Blueprint', 'OpenXR', 'Wwise'],
-      image: '',
+      title: 'Algoritmo Cacheiro Viajante',
+      category: 'pesquisa',
+      description: 'Algorítmo para determinar a rota mais eficiente para um caminhão distribuir vacinas para todas as cidades do estado do Maranhão.',
+      longDescription: 'Algoritmo para resolver o problema do caixeiro viajante, utilizando técnicas de otimização e busca heurística.',
+      technologies: ['Python', 'Algoritmos', 'Otimização'],
+      image: 'CodePage',
+      codeUrl: 'https://github.com/CarlosSouzapjr/EntregaDeVacinas',
       featured: false,
       status: 'prototype',
       year: '2024'
@@ -286,7 +297,7 @@ const ProjectsSection: React.FC = () => {
     { id: 'all', name: 'TODOS', color: '#e12e0f' },
     { id: 'game', name: 'JOGOS', color: '#e12e0f' },
     { id: 'web', name: 'WEB', color: '#e95610' },
-    { id: 'mobile', name: 'MOBILE', color: '#ffa207' },
+    { id: 'pesquisa', name: 'PESQUISA', color: '#ffa207' },
     { id: 'tool', name: 'FERRAMENTAS', color: '#ffec3c' }
   ];
 

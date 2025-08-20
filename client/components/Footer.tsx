@@ -106,7 +106,7 @@ const ContactSection: React.FC = () => {
   const socialLinks: SocialLink[] = [
     {
       name: 'EMAIL',
-      url: 'https://mailto:igorfros@gmail.com', // Confirme se este é o email correto
+      url: 'mailto:igorfros@gmail.com',
       icon: 'email',
       color: '#7cbba2',
       hoverColor: '#E53935'
@@ -140,7 +140,7 @@ const ContactSection: React.FC = () => {
         
         {/* Main Contact Button */}
         <a
-          href="mailto:dev@example.com"
+          href="mailto:igorfros@gmail.com"
           className="inline-block group relative px-8 py-4 bg-primary border-4 border-gamer-red-900 font-pixel text-white hover:bg-gamer-red-600 transition-all duration-300 transform hover:scale-105 active:scale-95"
         >
           <span className="relative z-10">ENTRAR EM CONTATO</span>

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
-import logo from './assets/LogoIK.png'
-import InteractiveAvatar from './GrandpaComputer';
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -87,7 +84,7 @@ const MobileMenuButton: React.FC = () => {
   const navItems = [
     { id: 'home', label: 'HOME' },
     { id: 'about', label: 'SOBRE MIM' },
-    { id: 'skills', label: 'SKILLS' },
+    { id: 'skills', label: 'HABILIDADES' },
     { id: 'technologies', label: 'TECNOLOGIAS' },
     { id: 'projects', label: 'PROJETOS' },
     { id: 'contact', label: 'CONTATO' },
