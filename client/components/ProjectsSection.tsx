@@ -238,6 +238,19 @@ const ProjectsSection: React.FC = () => {
       year: '2024'
     },
     {
+      id: '6',
+      title: 'Algoritmo Cacheiro Viajante',
+      category: 'pesquisa',
+      description: 'Algorítmo para determinar a rota mais eficiente para um caminhão distribuir vacinas para todas as cidades do estado do Maranhão.',
+      longDescription: 'Algoritmo para resolver o problema do caixeiro viajante, utilizando técnicas de otimização e busca heurística.',
+      technologies: ['Python', 'Algoritmos', 'Otimização'],
+      image: 'CodePage',
+      codeUrl: 'https://github.com/CarlosSouzapjr/EntregaDeVacinas',
+      featured: true,
+      status: 'prototype',
+      year: '2024'
+    },
+    {
       id: '3',
       title: 'BUSCA SAÚDE',
       category: 'tool',
@@ -274,21 +287,8 @@ const ProjectsSection: React.FC = () => {
       technologies: ['Pygame', 'Python'],
       image: 'CodePage',
       codeUrl: 'https://github.com/IgorKhalil/Duke-Valley',
-      featured: true,
-      status: 'in-progress',
-      year: '2024'
-    },
-    {
-      id: '6',
-      title: 'Algoritmo Cacheiro Viajante',
-      category: 'pesquisa',
-      description: 'Algorítmo para determinar a rota mais eficiente para um caminhão distribuir vacinas para todas as cidades do estado do Maranhão.',
-      longDescription: 'Algoritmo para resolver o problema do caixeiro viajante, utilizando técnicas de otimização e busca heurística.',
-      technologies: ['Python', 'Algoritmos', 'Otimização'],
-      image: 'CodePage',
-      codeUrl: 'https://github.com/CarlosSouzapjr/EntregaDeVacinas',
       featured: false,
-      status: 'prototype',
+      status: 'in-progress',
       year: '2024'
     }
   ];

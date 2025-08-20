@@ -122,24 +122,15 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center ">
               <button 
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="medieval-button font-pixel text-sm transform hover:scale-105 active:scale-95"
+                className="medieval-button border-r-2 font-pixel text-sm transform hover:scale-105 active:scale-95"
               >
-                <span className="relative z-10">VER PROJETOS</span>
+                <span className="relative z-10">CURRÍCULO</span>
                 
               </button>
-              
-              <button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative px-6 py-3 bg-transparent medieval-border font-pixel text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-200 transform hover:scale-105 active:scale-95 rounded"
-              >
-                <span className="relative z-10">CONTATO</span>
-                
-                {/* Hover background */}
-                <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left rounded"></div>
-              </button>
+    
             </div>
 
             {/* Status indicators */}

@@ -106,24 +106,6 @@ const HomeSection: React.FC = () => {
               <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left rounded"></div>
             </button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-3xl mx-auto">
-            <div className="medieval-box p-6 text-center bg-card/50">
-              <div className="font-pixel text-2xl text-primary mb-2">5+</div>
-              <div className="font-pixel text-xs text-muted-foreground">ANOS DE EXPERIÊNCIA</div>
-            </div>
-            
-            <div className="medieval-box p-6 text-center bg-card/50">
-              <div className="font-pixel text-2xl text-primary mb-2">50+</div>
-              <div className="font-pixel text-xs text-muted-foreground">PROJETOS CONCLUÍDOS</div>
-            </div>
-            
-            <div className="medieval-box p-6 text-center bg-card/50">
-              <div className="font-pixel text-2xl text-primary mb-2">∞</div>
-              <div className="font-pixel text-xs text-muted-foreground">IDEIAS CRIATIVAS</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
