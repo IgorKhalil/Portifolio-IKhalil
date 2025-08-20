@@ -123,14 +123,13 @@ const HeroSection: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4 justify-center ">
-              <button 
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              <a 
+                href="/CurriculoIgor.pdf" 
+                download="Curriculo-Igor-Khalil.pdf"
                 className="medieval-button border-r-2 font-pixel text-sm transform hover:scale-105 active:scale-95"
               >
                 <span className="relative z-10">CURRÍCULO</span>
-                
-              </button>
-    
+              </a>
             </div>
 
             {/* Status indicators */}
