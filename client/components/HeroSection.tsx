@@ -101,23 +101,33 @@ const HeroSection: React.FC = () => {
             </div>
 
             <div className="space-y-6 text-foreground/90 leading-relaxed">
-              <p className="text-lg">
-                Olá! Sou um <span className="text-primary font-bold medieval-text">desenvolvedor de jogos</span> apaixonado 
-                por criar experiências interativas únicas. Com anos de experiência no desenvolvimento de games, 
-                combino criatividade com código para dar vida a mundos digitais incríveis.
+              <p className="text-m">
+                Olá! Sou um <span className="text-primary font-bold medieval-text">Igor Khalil Campos Silva </span> 
+                graduando em <span className="text-primary font-bold medieval-text">Ciência da Computação </span>pela UFMA e 
+                <span className="text-primary font-bold medieval-text"> Vice-Presidente do Game Analysis </span>,
+                divisão de jogos educacionais do DARTiLab/UFMA. Acredito que tecnologia vai além de código: 
+                é uma forma de conectar pessoas, valorizar culturas e transformar realidades. 
+                Por isso, meu propósito é continuar crescendo como desenvolvedor e líder, criando experiências 
+                digitais que unam inovação, impacto social e excelência técnica.
+
               </p>
               
-              <p>
-                Minha jornada começou com os clássicos <span className="text-accent font-bold">8-bit</span> que 
-                moldaram minha paixão por jogos. Hoje, uso tecnologias modernas para criar desde jogos indie 
-                inovadores até experiências AAA complexas.
+              <p className="text-sm">
+                Minha formação acadêmica é sólida e multidisciplinar: Técnico em Eletrônica (IFMA),
+                 Técnico em Engenharia Clínica (Hospital São Domingos), formação em Engenharia de Software 
+                 pela Escola DNC, e atualmente em graduação em Ciência da Computação (UFMA). 
+                 Essa diversidade me permitiu desenvolver tanto habilidades técnicas 
+                 (C, Python, JavaScript, entre outras) 
+                 quanto competências analíticas e práticas de liderança.
               </p>
               
-              <p>
-                Especializado em <span className="text-accent font-bold">Unity</span>,
-                <span className="text-accent font-bold"> Unreal Engine</span> e
-                <span className="text-accent font-bold"> desenvolvimento web</span>, 
-                estou sempre explorando novas formas de inovar no mundo dos games.
+              <p className="text-sm">
+                Mas meu verdadeiro diferencial está nas soft skills. Ao longo da minha carreira, 
+                aprimorei minha capacidade de liderança e governança, atuando com metodologias ágeis 
+                (Scrum) para coordenar equipes de design e programação. Tenho comunicação eficaz para 
+                transmitir ideias complexas de forma clara, resolução de problemas com foco criativo e 
+                pragmático, além de resiliência e adaptabilidade, fundamentais para lidar com os desafios 
+                de projetos de tecnologia.
               </p>
             </div>
 

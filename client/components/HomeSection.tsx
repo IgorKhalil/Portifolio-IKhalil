@@ -61,13 +61,12 @@ const HomeSection: React.FC = () => {
           {/* Brief Introduction */}
           <div className="space-y-6 max-w-2xl mx-auto">
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-              Transformo ideias em experiências digitais interativas. 
-              Apaixonado por criar jogos que envolvem e aplicações web que impressionam.
+              Transformo ideias em experiências digitais interativas.
+              Apaixonado por criar jogos que inspiram e aplicações web que impressionam, alio criatividade e técnica para desenvolver soluções inovadoras.
             </p>
             
             <p className="text-base md:text-lg text-foreground/70">
-              Com expertise em desenvolvimento de jogos e tecnologias web modernas, 
-              construo soluções completas do conceito ao produto final.
+              Com experiência em desenvolvimento de jogos educacionais, tecnologias web modernas e liderança de equipes, construo produtos completos — do conceito ao resultado final — sempre guiado por metodologias ágeis e foco em impacto social.
             </p>
           </div>
 

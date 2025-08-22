@@ -109,7 +109,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'language',
       color: '#9058ff',
       experience: '3+ ANOS',
-      description: 'Linguagem versátil para web'
+      description: 'Linguagem versátil para web, utilizada na construção de aplicações dinâmicas e interativas.'
     },
     {
       name: 'JAVA',
@@ -117,7 +117,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'language',
       color: '#9058ff',
       experience: '1+ ANOS',
-      description: 'Liguagem usada para desenvolver uma ampla variedade de aplicações'
+      description: 'Linguagem robusta e orientada a objetos, aplicada no desenvolvimento de aplicações multiplataforma.'
     },
     {
       name: 'C',
@@ -125,7 +125,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'language',
       color: '#9058ff',
       experience: '2+ ANOS',
-      description: 'Usada para desenvolver sistemas operacionais, sistemas embarcados...'
+      description: 'Base de sistemas operacionais, sistemas embarcados e softwares de alto desempenho.'
     },
     {
       name: 'TYPESCRIPT',
@@ -133,7 +133,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'language',
       color: '#9058ff',
       experience: '3+ ANOS',
-      description: 'Desenvolvimento tipado para projetos escaláveis e robustos'
+      description: 'Versão tipada do JavaScript, ideal para projetos escaláveis, seguros e robustos.'
     },
     {
       name: 'PYTHON',
@@ -141,7 +141,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'language',
       color: '#9058ff',
       experience: '2+ ANOS',
-      description: 'Automação, IA e desenvolvimento de ferramentas para jogos'
+      description: 'Amplamente usada em automação, inteligência artificial, análise de dados e desenvolvimento de jogos.'
     },
     {
       name: 'REACT',
@@ -149,7 +149,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'framework',
       color: '#9058ff',
       experience: '2+ ANOS',
-      description: 'Criação de interfaces interativas e aplicações web modernas'
+      description: 'Biblioteca moderna para criação de interfaces interativas e aplicações web responsivas.'
     },
     {
       name: 'NODE.JS',
@@ -157,7 +157,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'framework',
       color: '#9058ff',
       experience: '2+ ANOS',
-      description: 'Backend APIs e serviços'
+      description: 'Ambiente para construção de backends e APIs escaláveis e eficientes.'
     },
     {
       name: 'TAILWIND',
@@ -165,7 +165,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'framework',
       color: '#9058ff',
       experience: '2+ ANOS',
-      description: 'Permite criar interfaces de usuário de forma rápida e eficiente através de classes utilitárias'
+      description: 'Framework de utilitários que acelera o design de interfaces modernas e responsivas.'
     },
     {
       name: 'GODOT',
@@ -173,7 +173,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'engine',
       color: '#9058ff',
       experience: '2+ ANOS',
-      description: 'Engine open source para jogos indie e experimentais'
+      description: 'Engine open-source para desenvolvimento de jogos, ideal para projetos criativos e educacionais.'
     },
     {
       name: 'GIT',
@@ -181,7 +181,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'tool',
       color: '#9058ff',
       experience: '2+ ANOS',
-      description: 'Controle de versão essencial para projetos colaborativos'
+      description: 'Ferramenta essencial de versionamento e colaboração em projetos de software.'
     },
     {
       name: 'FIGMA',
@@ -189,7 +189,7 @@ const TechnologiesSection: React.FC = () => {
       category: 'tool',
       color: '#9058ff',
       experience: '3+ ANOS',
-      description: 'Usada principalmente para criar interfaces de usuário (UI) e experiências de usuário (UX)'
+      description: 'Plataforma de design colaborativo usada na criação de interfaces intuitivas e experiências de usuário.'
     }
   ];
 

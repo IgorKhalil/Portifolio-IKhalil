@@ -167,27 +167,35 @@ const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
 const SkillsSection: React.FC = () => {
   const skills: Skill[] = [
     {
-      name: 'METODOLOGIAS ÁGEIS',
+      name: 'COMUNICAÇÃO EFICAZ',
       level: 100,
       icon: 'unity',
-      color: '#e12e0f',
-      description: 'Utilizador de metodologias ágeis como SCRUMM',
+      color: '#ffa207',
+      description: 'Capacidade de traduzir ideias complexas em mensagens claras, adaptadas a diferentes públicos.',
+      category: 'comunicação e colaboração'
+    },
+    {
+      name: 'GOVERNAÇA',
+      level: 97,
+      icon: 'tools',
+      color: '#e95610',
+      description: 'Liderança estratégica, tomada de decisão e aplicação de mecanismos de controle de projetos.',
       category: 'liderança e gestao'
     },
     {
-      name: 'COMUNICAÇÃO EFICAZ',
-      level: 98,
+      name: 'METODOLOGIAS ÁGEIS',
+      level: 95,
       icon: 'unity',
-      color: '#ffa207',
-      description: 'Habilidade de explicar ideias complexas de forma clara e concisa, tanto para outros desenvolvedores quanto para pessoas sem conhecimento técnico.',
-      category: 'comunicação e colaboração'
+      color: '#e12e0f',
+      description: 'Aplicação de práticas ágeis para gerenciar equipes e entregar valor contínuo em projetos.',
+      category: 'liderança e gestao'
     },
     {
       name: 'RESOLUÇÃO DE PROBLEMAS',
       level: 95,
       icon: 'code',
       color: '#ffec3c',
-      description: ' Capacidade de identificar, analisar e solucionar problemas de forma eficiente e criativa, seja em código ou em situações do dia a dia do projeto.',
+      description: 'Identificação e solução criativa de desafios técnicos e estratégicos em projetos.',
       category: 'produtividade e resiliência'
     },
     {
@@ -195,7 +203,7 @@ const SkillsSection: React.FC = () => {
       level: 95,
       icon: 'unity',
       color: '#e12e0f',
-      description: 'Habilidade de colaborar com outros membros da equipe, compartilhar conhecimentos, receber feedback e contribuir para um ambiente de trabalho positivo.',
+      description: 'Colaboração ativa, troca de conhecimentos e construção de um ambiente produtivo.',
       category: 'comunicação e colaboração'
     },
     {
@@ -203,7 +211,7 @@ const SkillsSection: React.FC = () => {
       level: 93,
       icon: 'web',
       color: '#ff9210',
-      description: 'Capacidade de se ajustar a novas tecnologias, metodologias e mudanças no projeto, mantendo a produtividade.',
+      description: 'Rapidez para aprender novas tecnologias e ajustar-se a mudanças de contexto ou prioridade.',
       category: 'produtividade e resiliência'
     },
     {
@@ -211,7 +219,7 @@ const SkillsSection: React.FC = () => {
       level: 90,
       icon: 'unity',
       color: '#950e05',
-      description: 'Capacidade de lidar com a pressão, frustrações e falhas, aprendendo com os erros e mantendo a motivação.',
+      description: 'Capacidade de lidar com pressões e falhas, mantendo a motivação e foco nos resultados.',
       category: 'produtividade e resiliência'
     },
     {
@@ -219,7 +227,7 @@ const SkillsSection: React.FC = () => {
       level: 90,
       icon: 'code',
       color: '#e95610',
-      description: 'Compreender e gerenciar as próprias emoções e as dos outros, especialmente em situações de pressão.',
+      description: 'Gestão das próprias emoções e empatia para compreender e apoiar colegas de equipe.',
       category: 'comunicação e colaboração'
     },
     {
@@ -227,23 +235,15 @@ const SkillsSection: React.FC = () => {
       level: 90,
       icon: 'code',
       color: '#ffa207',
-      description: 'Gerenciar o tempo, priorizar tarefas e manter o código organizado.',
+      description: 'Planejamento eficiente, priorização de tarefas e manutenção de projetos bem estruturados.',
       category: 'produtividade e resiliência'
-    },
-    {
-      name: 'GOVERNAÇA',
-      level: 90,
-      icon: 'tools',
-      color: '#e95610',
-      description: 'Mecanismos de liderança, estratégia e controle',
-      category: 'liderança e gestao'
     },
     {
       name: 'PENSAMENTO CRÍTICO',
       level: 90,
       icon: 'gestao',
       color: '#950e05',
-      description: 'A habilidade de avaliar informações, identificar padrões e tomar decisões informadas é crucial para liderar projetos e garantir a qualidade do trabalho.',
+      description: 'Avaliação analítica de informações, identificação de padrões e tomada de decisões fundamentadas.',
       category: 'liderança e gestao'
     }
   ];
@@ -274,7 +274,7 @@ const SkillsSection: React.FC = () => {
           </div>
           
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Minhas habilidades desenvolvidas através de anos criando jogos e experiências digitais
+            Minhas habilidades desenvolvidas através de anos de experiências
           </p>
         </div>
 
